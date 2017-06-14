@@ -1,0 +1,23 @@
+#user2 {
+  display: none;
+}
+
+
+body {
+  text-align: center;
+}
+
+.panel {
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+
+.player1 {
+  color: lightblue;
+}
+
+.player2 {
+  color: red;
+}

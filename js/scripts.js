@@ -40,6 +40,7 @@ function grandTotalUser1(_grandTotal1) {
 };
 /////////////////////////////////////////////
 
+
 //////////////USER 2 GRAND TOTAL//////////////
 newGrandTotal2 = 0;
 function grandTotalUser2(_grandTotal2) {
@@ -47,6 +48,12 @@ function grandTotalUser2(_grandTotal2) {
   return newGrandTotal2;
 };
 /////////////////////////////////////////////
+
+function endGame(one, two) {
+  if (one >= 100 || two >= 100) {
+    alert("Congratz! You are the winner!")
+  }
+};
 
 //user logic:
 $(document).ready(function() {
@@ -67,20 +74,26 @@ $(document).ready(function() {
   $("#user1").submit(function(event) {
     event.preventDefault();
     grandTotal1 = turnTotal1;
-    var updatedGrandTotal1 = grandTotalUser1(grandTotal1);
+    updatedGrandTotal1 = grandTotalUser1(grandTotal1);
     $("#grand1").text(updatedGrandTotal1);
     $("#turn1").empty();
     $("#roll1").empty();
     total1 = 0;
+    $("#user1").hide();
+    $("#user2").show();
+    endGame(updatedGrandTotal1, updatedGrandTotal2);
   });
   $("#user2").submit(function(event) {
     event.preventDefault();
     grandTotal2 = turnTotal2;
-    var updatedGrandTotal2 = grandTotalUser2(grandTotal2);
+    updatedGrandTotal2 = grandTotalUser2(grandTotal2);
     $("#grand2").text(updatedGrandTotal2);
     $("#turn2").empty();
     $("#roll2").empty();
     total2 = 0;
+    $("#user2").hide();
+    $("#user1").show();
+    endGame(updatedGrandTotal1, updatedGrandTotal2)
   });
 
 
