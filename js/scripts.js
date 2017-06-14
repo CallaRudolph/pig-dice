@@ -13,6 +13,8 @@ var total1 = 0
 function getTotal(_roll) {
   if (_roll === 1) {
     total1 = 0;
+    $("#user1").hide();
+    $("#user2").show();
   } else {
     total1 += _roll;
   }
@@ -25,6 +27,8 @@ var total2 = 0
 function getTotal2(_roll) {
   if (_roll === 1) {
     total2 = 0;
+    $("#user2").hide();
+    $("#user1").show();
   } else {
     total2 += _roll;
   }
@@ -52,6 +56,7 @@ function grandTotalUser2(_grandTotal2) {
 function endGame(one, two) {
   if (one >= 100 || two >= 100) {
     alert("Congratz! You are the winner!")
+
   }
 };
 
