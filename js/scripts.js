@@ -15,6 +15,8 @@ function getTotal(_roll) {
     total1 = 0;
     $("#user1").hide();
     $("#user2").show();
+    $("#turn1").empty();
+    $("#roll1").empty();
   } else {
     total1 += _roll;
   }
@@ -29,6 +31,9 @@ function getTotal2(_roll) {
     total2 = 0;
     $("#user2").hide();
     $("#user1").show();
+    $("#turn2").empty();
+    $("#roll2").empty();
+
   } else {
     total2 += _roll;
   }
