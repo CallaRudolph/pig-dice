@@ -13,10 +13,6 @@ var total1 = 0
 function getTotal(_roll) {
   if (_roll === 1) {
     total1 = 0;
-    $("#user1").hide();
-    $("#user2").show();
-    $("#turn1").empty();
-    $("#roll1").empty();
   } else {
     total1 += _roll;
   }
@@ -29,11 +25,6 @@ var total2 = 0
 function getTotal2(_roll) {
   if (_roll === 1) {
     total2 = 0;
-    $("#user2").hide();
-    $("#user1").show();
-    $("#turn2").empty();
-    $("#roll2").empty();
-
   } else {
     total2 += _roll;
   }
@@ -49,7 +40,6 @@ function grandTotalUser1(_grandTotal1) {
 };
 /////////////////////////////////////////////
 
-
 //////////////USER 2 GRAND TOTAL//////////////
 newGrandTotal2 = 0;
 function grandTotalUser2(_grandTotal2) {
@@ -57,13 +47,6 @@ function grandTotalUser2(_grandTotal2) {
   return newGrandTotal2;
 };
 /////////////////////////////////////////////
-
-function endGame(one, two) {
-  if (one >= 100 || two >= 100) {
-    alert("Congratz! You are the winner!")
-
-  }
-};
 
 //user logic:
 $(document).ready(function() {
@@ -73,6 +56,12 @@ $(document).ready(function() {
     $("#roll1").text(roll1)
     turnTotal1 = getTotal(roll1);
     $("#turn1").text(turnTotal1);
+    if (roll1 === 1) {
+      $("#user1").hide();
+      $("#user2").show();
+      $("#turn1").empty();
+      $("#roll1").empty();
+    }
   });
   $("#user2Roll").click(function(event) {
     event.preventDefault();
@@ -80,6 +69,12 @@ $(document).ready(function() {
     $("#roll2").text(roll2)
     turnTotal2 = getTotal2(roll2);
     $("#turn2").text(turnTotal2);
+    if (roll2 === 1) {
+      $("#user2").hide();
+      $("#user1").show();
+      $("#turn2").empty();
+      $("#roll2").empty();
+    }
   });
   $("#user1").submit(function(event) {
     event.preventDefault();
@@ -91,7 +86,11 @@ $(document).ready(function() {
     total1 = 0;
     $("#user1").hide();
     $("#user2").show();
-    endGame(updatedGrandTotal1, updatedGrandTotal2);
+    if (updatedGrandTotal1 >= 100) {
+      alert("Congratz! You've won!");
+      updatedGrandTotal1 = 0;
+    }
+
   });
   $("#user2").submit(function(event) {
     event.preventDefault();
@@ -103,8 +102,8 @@ $(document).ready(function() {
     total2 = 0;
     $("#user2").hide();
     $("#user1").show();
-    endGame(updatedGrandTotal1, updatedGrandTotal2)
+    if (updatedGrandTotal2 >= 100) {
+      alert("Congratz! You've won!");
+    }
   });
-
-
 });

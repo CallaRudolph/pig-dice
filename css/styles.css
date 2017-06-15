@@ -2,7 +2,6 @@
   display: none;
 }
 
-
 body {
   text-align: center;
 }
@@ -13,11 +12,15 @@ body {
   margin-right: 30%;
 }
 
-
 .player1 {
   color: lightblue;
 }
 
 .player2 {
   color: red;
+}
+
+.jumbotron {
+  background-image: url(../dice.png);
+  background-size: 9%;
 }
