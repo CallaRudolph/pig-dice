@@ -26,12 +26,12 @@ Player.prototype.grandCounter = function() {
 };
 
 $(document).ready(function() {
-  newPlayer = new Player;
-  newPlayer2 = new Player;
+  var newPlayer = new Player;
+  var newPlayer2 = new Player;
   $("#user1Roll").click(function(event) {
     event.preventDefault();
     var userRoll = (newPlayer.diceRoll())
-    turnTotal = (newPlayer.turnCounter());
+    var turnTotal = (newPlayer.turnCounter());
     $("#roll1").text(userRoll);
     $("#turn1").text(turnTotal);
     if (userRoll === 1) {
@@ -58,7 +58,7 @@ $(document).ready(function() {
   $("#user2Roll").click(function(event) {
     event.preventDefault();
     var userRoll = (newPlayer2.diceRoll())
-    turnTotal = (newPlayer2.turnCounter());
+    var turnTotal = (newPlayer2.turnCounter());
     $("#roll2").text(userRoll);
     $("#turn2").text(turnTotal);
     if (userRoll === 1) {
