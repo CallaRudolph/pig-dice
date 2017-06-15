@@ -4,6 +4,7 @@
 
 body {
   text-align: center;
+  background-color: lightgray;
 }
 
 .panel {
@@ -14,6 +15,7 @@ body {
 
 .player1 {
   color: lightblue;
+  text-shadow: 2px 2px grey;
 }
 
 .player2 {
@@ -22,5 +24,8 @@ body {
 
 .jumbotron {
   background-image: url(../dice.png);
-  background-size: 9%;
+  background-size: 10%;
+  width: 88%;
+  display: block;
+  margin: auto;
 }
