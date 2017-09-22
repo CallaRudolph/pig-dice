@@ -23,7 +23,7 @@ body {
 }
 
 .jumbotron {
-  background-image: url(../dice.png);
+  background-image: url(img/dice.png);
   background-size: 10%;
   width: 88%;
   display: block;
